@@ -1,0 +1,224 @@
+#!/bin/bash
+# =============================================
+# Formelsammlung Physik – reines Bash (Single-Key + c zum Zurück)
+# =============================================
+# Naturkonstanten: SI-Neudefinition 2019 + CODATA 2022
+# Navigation: Einzelne Taste im Hauptmenü
+# Neu: In **allen Unterkapiteln** nur mit 'c' / 'C' zurück zum Hauptmenü
+#      (andere Tasten werden ignoriert → keine Fehlbedienung)
+
+# =============================================
+# HILFSFUNKTION: Warte explizit auf 'c' (Master-Clean-Code)
+# =============================================
+wait_for_c() {
+    echo ""
+    echo ""
+    echo ""
+    echo -n "Eingabe [c], um zurück ins Hauptmenü zu gelangen..."
+    while true; do
+        read -n1 -s key          # -n1 = 1 Zeichen, -s = kein Echo
+        key=${key,,}             # Automatisch Kleinbuchstabe
+        if [ "$key" = "c" ]; then
+            echo                 # Saubere neue Zeile
+            return               # Zurück ins Haupt-while
+        fi
+        # Andere Tasten → nichts tun (stilles Warten)
+    done
+}
+
+while true; do
+    clear
+    echo "> Formelsammlung Physik"
+    echo ""
+    echo " 0. Naturkonstanten"
+    echo ""
+    echo " 1. Newton'sche Mechanik"
+    echo " 2. Analytische Mechanik"
+    echo " 3. Elektrodynamik"
+    echo " 4. Optik"
+    echo " 5. Quantenmechanik"
+    echo " 6. Festkörperphysik"
+    echo " 7. Relativitätstheorie"
+    echo ""
+    echo ""
+    echo ""
+    echo ""
+    echo "Eingabe	[0]-[7],	um das jeweilige Kapitel zu öffnen"
+    echo "Eingabe	[c]		zum Beenden/Zurückgehen"
+    echo "Eigabe	[↓], [hoch]	zum navigieren des Cursors"
+    echo "Eingabe	[i]		für mehr Informationen zum markierten Thema"
+    echo -n ""
+    read -n1 -s wahl
+    echo
+    wahl=${wahl,,}               # Kleinbuchstaben-Normierung
+
+    if [ "$wahl" = "0" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Naturkonstanten"
+        echo ""
+        echo ""
+        echo ">>> Mechanik"
+        echo " Gravitationskonstante:       G  = 6.67430(15)×10⁻¹¹ m³ kg⁻¹ s⁻²"
+        echo " Erdmasse:                    M_⊕ = 5.97237(±0.00029)×10²⁴ kg"
+        echo " Sonnenmasse:                 M_☉ = 1.9885(±0.0003)×10³⁰ kg"
+        echo ""
+        echo ""
+        echo ">>> Elektrodynamik"
+        echo " Elementarladung:             e   = 1.602176634×10⁻¹⁹ C      (exakt)"
+        echo " Lichtgeschwindigkeit:        c  = 299792458 m/s               (exakt)"
+        echo " Elektrische Feldkonstante:   ε₀  = 8.8541878128(13)×10⁻¹² F/m"
+        echo " Magnetische Feldkonstante:   μ₀  = 1.25663706212(19)×10⁻⁶ H/m"
+        echo " Coulomb-Konstante:           k   = 8.987551789×10⁹ N·m²/C²"
+        echo ""
+        echo ""
+        echo ">>> Quantenmechanik"
+        echo " Plancksche Konstante:        h   = 6.62607015×10⁻³⁴ J·s     (exakt)"
+        echo " Reduzierte Plancksche Konst.: ħ  = 1.054571817…×10⁻³⁴ J·s"
+        echo " Feinstrukturkonstante:       α   ≈ 7.2973525693(11)×10⁻³"
+        echo " Rydberg-Konstante:           R_∞ = 1.0973731568160(21)×10⁷ m⁻¹"
+        echo " Bohr-Radius:                 a₀  = 5.29177210903(80)×10⁻¹¹ m"
+        echo ""
+        echo ""
+        echo ">>> Thermodynamik"
+        echo " Avogadro-Konstante:          N_A = 6.02214076×10²³ mol⁻¹    (exakt)"
+        echo " Boltzmann-Konstante:         k_B = 1.380649×10⁻²³ J/K       (exakt)"
+        echo " Gaskonstante:                R   = 8.314462618 J mol⁻¹ K⁻¹"
+        wait_for_c
+
+    elif [ "$wahl" = "1" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Newton'sche Mechanik"
+        echo ""
+        echo ">>> Axiome und grundlegende Definitionen"
+        echo "2. Axiom ''Bewegungsgleichung'':	F = m a"
+        echo "3. Axiom ''Actio = Reactio'':		F_{12} = -F_{21}"
+        echo "Geschwindigkeit:			v := lim_{h->0} (x(t+h)-x(h)) / h"
+        echo "Bescheunigung:				a := lim_{h->0} (v(t+h)-v(h)) / h"
+        echo ""
+        echo ">>> Erhaltungssätze"
+        echo "Kinetische Energie:	T = 1/2 m v²"
+        echo "Potential:		F = -grad V"
+        echo "Energie:		E = T + V"
+        echo "Impuls:			p = m V"
+        echo "Drehimpuls:		L = r × p"
+        echo "Drehmoment:		M = r × F"
+        echo ""
+        echo ">>> Modellsysteme der Mechanik des Massenpunkts"
+        echo ">>>> Harmonischer Oszillator"
+        echo "Potential: 		V = 1/2 k x²"
+        echo "Ort:	 		x(t) = v0/omega sin(omega t) + x0 cos(omega t) = A sin(omega t + delta)"
+        echo "Energie:		E = 1/2 k/m x² A²"
+        echo ""
+        echo ">>>> Harmonischer Oszillator mit Stokes-Reibung"
+        echo "..."
+        echo ""
+        echo ">>>> Getriebener harmonischer Oszillator"
+        echo "..."
+        echo ">>> Schiefer Wurf"
+        echo "Höhe-Weite Zusammenhang:	y(x) = -g/(2v0²cos²alpha) x² + tan alpha x"
+        echo "Maximale Höhe des Wurfs:	H = v0²/(2g) sin²alpha"
+        echo "Wurfweite:			L = 2v0² sin(alpha) cos(alpha)/g"
+        echo ""
+        echo ">>> Fadenpendel"
+        echo "Periodendauer:	T = 2pi sqrt(l/g)"
+        echo "..."
+        echo ""
+        echo ">> Reale Körper"
+        echo ">>> Reibung"
+        echo "Haftreibung:	F_H = mu_H F_N"
+        echo "Gleitreibung:	F_G = mu_G F_N"
+        echo "Rollreibung:	M_R = mu_R F_N"
+        echo ">>> Deformation"
+        echo "..."
+        wait_for_c
+
+    elif [ "$wahl" = "2" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Analytische Mechanik"
+        echo ""
+        echo "Lagrange-Gleichungen 1. Art:	..."
+        echo "Lagrange-Gleichung 2. Art:          d/dt (∂L/∂q̇_k) - ∂L/∂q_k = 0"
+        echo "Hamilton-Gleichungen:        q̇ = ∂H/∂p    |    ṗ = -∂H/∂q"
+        echo "Noether-Theorem:             Symmetrie → Erhaltungsgröße"
+        wait_for_c
+
+    elif [ "$wahl" = "3" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Elektrodynamik"
+        echo ""
+        echo "Maxwell-Gleichungen:"
+        echo " ∇·D = ρ_f"
+        echo " ∇·B = 0"
+        echo " ∇×E = -∂B/∂t"
+        echo " ∇×H = J_f + ∂D/∂t"
+        echo ""
+        echo "Lorentz-Kraft:               F = q (E + v × B)"
+        echo "Poynting-Vektor:             S = (1/μ₀) E × B"
+        wait_for_c
+
+    elif [ "$wahl" = "4" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Optik"
+        echo ""
+        echo ">>> Elektromagnetische Welle"
+        echo "..."
+        echo "..."
+        echo ""
+        echo ""
+        echo ">>> Geometrische Optik"
+        echo "Snelliusches Brechungsgesetz: n₁ sin θ₁ = n₂ sin θ₂"
+        echo "Reflexionsgesetz:            θ_i = θ_r"
+        echo "Linsengleichung:             1/f = 1/g + 1/b"
+        echo "Doppelspalt-Interferenz:     d sin θ = m λ"
+        wait_for_c
+
+    elif [ "$wahl" = "5" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Quantenmechanik"
+        echo ""
+        echo "Zeitabhängige Schrödinger-Gl.: i ħ ∂ψ/∂t = Ĥ ψ"
+        echo "Zeitunabhängige Schrödinger-Gl.: Ĥ ψ = E ψ"
+        echo "Pauli-Gleichung (mit Spin):"
+        echo " i ħ ∂ψ/∂t = [(p - qA)²/(2m) + qφ - μ·B] ψ"
+        echo "Erwartungswert:              <Ô> = ∫ ψ* Ô ψ dV"
+        wait_for_c
+
+    elif [ "$wahl" = "6" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Festkörperphysik"
+        echo ""
+        echo "Bragg-Bedingung:             2 d sin θ = n λ"
+        echo "Bloch-Theorem:               ψ(r + R) = e^{i k·R} ψ(r)"
+        echo "Fermi-Energie:               E_F = (ħ²/2m) (3π² n)^{2/3}"
+        wait_for_c
+
+    elif [ "$wahl" = "7" ]; then
+        clear
+        echo "> Formelsammlung Physik"
+        echo ">> Relativitätstheorie"
+        echo ""
+        echo "Einstein-Feldgleichungen:"
+        echo " G_μν + Λ g_μν = (8πG/c⁴) T_μν"
+        echo ""
+        echo "Spezielle Relativität:"
+        echo " E = γ m c²     |     p = γ m v"
+        echo " Lorentz-Transformation:"
+        echo " t' = γ (t - v x / c²)"
+        wait_for_c
+
+    elif [ "$wahl" = "c" ]; then
+        clear
+        echo "Programm wird beendet."
+        exit 0
+    else
+        echo -e "Falsche Eingabe! Nur 0-7 oder C erlaubt."
+        sleep 1.2
+    fi
+done
