@@ -1,5 +1,5 @@
 import curses
-# ====================== HAUPTMENÜ (mit Kurzerklärung) ======================
+# ============================= HAUPTMENÜ ================================
 MAIN_DATA = [
     {"number": 0, "level": 2, "title": "Naturkonstanten",
      "info": "Zusammenstellung aller wichtigen universellen Konstanten\n"
@@ -26,9 +26,11 @@ MAIN_DATA = [
      "info": "Spezielle und Allgemeine Relativitätstheorie,\n"
              "Lorentz-Transformation und Schwarzschild-Metrik."},
 ]
-# ====================== DETAIL-INHALT (Newton'sche Mechanik) ======================
+# =========================== DETAIL-INHALT ==============================
+
 SUB_DATA = {
-        0: [  # Naturkonstanten
+        0: [
+# =========================== Naturkonstanten ============================
         {
             "level": 3,
             "title": "Mechanik",
@@ -79,12 +81,13 @@ SUB_DATA = {
     
     
     
-    1: [ # Newton'sche Mechanik
+    1: [
+# ========================== Newton'sche Mechanik ========================
         {"level": 3, "title": "1. Axiome und grundlegende Definitionen",
          "info": "Dieser Abschnitt erklärt die drei Newton'schen Axiome und die grundlegenden kinematischen Größen.",
          "content": [
-             {"text": "2. Axiom \"Bewegungsgleichung\":", "formula": "F = m a", "info": "Das zweite Newton'sche Axiom verbindet Kraft, Masse und Beschleunigung."},
-             {"text": "3. Axiom \"Actio = Reactio\":", "formula": "F_{12} = -F_{21}", "info": "Kräfte zwischen zwei Körpern sind immer gleich groß und entgegengesetzt gerichtet."},
+             {"text": "Bewegungsgleichung (2. Axiom):", "formula": "F = m a", "info": "Das zweite Newton'sche Axiom verbindet Kraft, Masse und Beschleunigung."},
+             {"text": "Actio-Reactio (3. Axiom):", "formula": "F_{12} = -F_{21}", "info": "Kräfte zwischen zwei Körpern sind immer gleich groß und entgegengesetzt gerichtet."},
              {"text": "Geschwindigkeit:", "formula": "v := lim_{h->0} (x(t+h)-x(t)) / h", "info": "Definition der momentanen Geschwindigkeit als Ableitung des Ortes nach der Zeit."},
              {"text": "Beschleunigung:", "formula": "a := lim_{h->0} (v(t+h)-v(t)) / h", "info": "Beschleunigung ist die zeitliche Ableitung der Geschwindigkeit."}
          ]},
@@ -138,7 +141,476 @@ SUB_DATA = {
          "info": "Elastische und plastische Verformung.",
          "content": [{"text": "...", "formula": "", "info": ""}]},
     ],
-    # Hier kannst du später die anderen Kapitel (0, 2, 3 …) genau gleich einfügen
+
+
+
+
+# ========================== Analytische Mechanik ========================
+    2: [  # Analytische Mechanik
+        {
+            "level": 3,
+            "title": "Formalismen der Analytischen Mechanik",
+            "info": "Lagrange- und Hamilton-Formalismus der klassischen Mechanik.",
+            "content": [
+                {"text": "Lagrange-Gleichungen 1. Art:", "formula": "...", "info": "Lagrange-Gleichungen 1. Art"},
+                {"text": "Lagrange-Gleichung 2. Art:", "formula": "d/dt (∂L/∂q̇_k) - ∂L/∂q_k = 0", "info": "Lagrange-Gleichung zweiter Art"},
+                {"text": "Hamilton-Gleichungen:", "formula": "q̇ = ∂H/∂p, ṗ = -∂H/∂q", "info": "Kanonsche Gleichungen des Hamilton-Formalismus"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Prinzip der kleinsten Wirkung",
+            "info": "Das Prinzip der kleinsten Wirkung in der analytischen Mechanik.",
+            "content": [
+                {"text": "", "formula": "...", "info": "Prinzip der kleinsten Wirkung"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Noether-Theorem",
+            "info": "Noether-Theorem und Symmetrien.",
+            "content": [
+                {"text": "", "formula": "...", "info": "Noether-Theorem"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Zweikörperproblem",
+            "info": "Das reduzierte Zweikörperproblem.",
+            "content": [
+                {"text": "", "formula": "...", "info": "Zweikörperproblem"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Starre Körper",
+            "info": "Mechanik starrer Körper.",
+            "content": [
+                {"text": "", "formula": "...", "info": "Starre Körper"}
+            ]
+        }
+    ],
+
+
+
+
+
+    3: [  # Elektromagnetismus
+        {
+            "level": 3,
+            "title": "Elektrostatik",
+            "info": "Elektrostatische Felder und Grenzbedingungen.",
+            "content": [
+                {"text": "Grenzflächenbedingung Normalkomponente E-Feld:", "formula": "E_perp,A - E_perp,B = sigma/epsilon0", "info": "Normalkomponente des E-Feldes an Grenzflächen"},
+                {"text": "Grenzflächenbedingung Tangentialkomponente E-Feld:", "formula": "E_||,A = E_||,B", "info": "Tangentialkomponente des E-Feldes ist stetig"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Modellsysteme",
+            "info": "Wichtige Modellsysteme der Elektrostatik.",
+            "content": [
+                {"text": "Punktladung", "formula": "...", "info": "Punktladung"},
+                {"text": "Plattenkondensator", "formula": "...", "info": "Plattenkondensator"},
+                {"text": "Zylinderkondensator", "formula": "...", "info": "Zylinderkondensator"},
+                {"text": "Elektrischer Dipol", "formula": "...", "info": "Elektrischer Dipol"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Magnetostatik",
+            "info": "Magnetostatische Felder und Modellsysteme.",
+            "content": [
+                {"text": "Stromdurchflossener Draht", "formula": "...", "info": "Stromdurchflossener Draht"},
+                {"text": "Kreisstrom", "formula": "...", "info": "Kreisstrom"},
+                {"text": "Zylinderspule", "formula": "...", "info": "Zylinderspule"},
+                {"text": "Magnetischer Dipol", "formula": "...", "info": "Magnetischer Dipol"},
+                {"text": "Helmholtz-Spule", "formula": "...", "info": "Helmholtz-Spule"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Elektro- und Magnetostatik in Materie",
+            "info": "Verhalten in Dielektrika und Magnetika.",
+            "content": [
+                {"text": "Dielektrika", "formula": "...", "info": "Dielektrika"},
+                {"text": "Magnetika", "formula": "...", "info": "Magnetika"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Elektrodynamik",
+            "info": "Elektromagnetische Wellen und Dynamik.",
+            "content": [
+                {"text": "Elektromagnetische Welle", "formula": "...", "info": "Elektromagnetische Welle"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Elektronik",
+            "info": "Grundlagen der Elektronik.",
+            "content": [
+                {"text": "", "formula": "...", "info": ""}
+            ]
+        }
+    ],
+
+
+
+
+
+
+    4: [  # Optik
+        {
+            "level": 3,
+            "title": "Elektromagnetische Welle",
+            "info": "Wellenoptik und Ausbreitung.",
+            "content": [
+                {"text": "Ebene Welle", "formula": "...", "info": "Ebene Welle"},
+                {"text": "Wellenpaket", "formula": "...", "info": "Wellenpaket"},
+                {"text": "Reflexion und Transmission", "formula": "Snelliusches Brechungsgesetz: n₁ sinθ₁ = n₂ sinθ₂", "info": "Reflexion und Transmission"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Geometrische Optik",
+            "info": "Geometrische Optik und Linsen.",
+            "content": [
+                {"text": "Snelliusches Brechungsgesetz:", "formula": "n₁ sin θ₁ = n₂ sin θ₂", "info": "Snelliusches Brechungsgesetz"},
+                {"text": "Reflexionsgesetz:", "formula": "θ_i = θ_r", "info": "Reflexionsgesetz"},
+                {"text": "Modellsysteme", "formula": "...", "info": "Modellsysteme der geometrischen Optik"}
+            ]
+        }
+    ],
+
+
+
+
+
+
+
+
+    5: [  # Quantenmechanik
+        {
+            "level": 3,
+            "title": "1. Grundlegende Gleichungen und Definitionen",
+            "info": "Zeitabhängige und zeitunabhängige Schrödinger-Gleichung.",
+            "content": [
+                {"text": "Schrödinger-Gleichung:", "formula": "iħ ∂ψ/∂t = Ĥψ", "info": "Zeitabhängige Schrödinger-Gleichung"},
+                {"text": "Zeitunabhängige Schrödinger-Gl.:", "formula": "Ĥψ = E ψ", "info": "Zeitunabhängige Schrödinger-Gleichung"},
+                {"text": "Eigenzustand:", "formula": "ψ(x,t) = u(x) exp(-i/ħ E t)", "info": "Eigenzustand"}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "2. Eindimensionale Modellsysteme",
+            "info": "Eindimensionale Quantensysteme.",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.1 Unendlich hoher Potentialtopf",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.2 Potentialstufe",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.3 Potentialbarriere/Tunneleffekt",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.4 Endlich hoher Potentialtopf",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.5 Harmonischer Potentialtopf",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.6 Deltapotential",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.7 Teilchen auf einem Ring",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.8 Wellenpaket",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "3. Dreidimensionale Modellsysteme",
+            "info": "Dreidimensionale Quantensysteme.",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "3.1 Wasserstoffatom",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "3.2 Dreidimensionaler Harmonischer Oszillator",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "4 Teilchen im elektromagnetischen Feld",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "4.1 Zeeman-Effekt",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "4.2 Stern-Gerlach-Experiment",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "5. Spin",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "5.1 Spinpräzession",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "5.2 Magnetresonanz",
+            "info": "",
+            "content": []
+        },
+
+    ],
+
+
+
+
+
+
+
+    6: [  # Festkörperphysik
+        {
+            "level": 3,
+            "title": "1. Struktur von Festkörpern",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "2. Beugung",
+            "info": "",
+            "content": [
+                {"text": "", "formula": "...", "info": ""}
+            ]
+        },
+        {
+            "level": 4,
+            "title": "2.1 Elastische Streuung",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.2 Inelastische Streuung",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.3 Röntgen-Diffraktometrie",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "3. Dynamik von Atomen in Kristallen",
+            "info": "",
+            "content": [
+                {"text": "", "formula": "...", "info": ""}
+            ]
+        },
+        {
+            "level": 4,
+            "title": "3.1 Klassische Gitterschwingung",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "3.2 Phononen",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "3.3 Phononenspektrometrie",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "4. Thermische Eigenschaften",
+            "info": "",
+            "content": [
+                {"text": "", "formula": "...", "info": ""}
+            ]
+        },
+        {
+            "level": 4,
+            "title": "4.1 Spezifische Wärme",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "4.2 Wärmeleitfähigkeit",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "5. Elektrische Eigenschaften",
+            "info": "",
+            "content": [
+                {"text": "", "formula": "...", "info": ""}
+            ]
+        },
+        {
+            "level": 4,
+            "title": "5.1 Modelle",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "5.1.1 Drude-Modell",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "5.1.2 Sommerfeld-Modell",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "5.2 Energiebänder",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "5.3 Hall-Effekt",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "6. Halbleiter",
+            "info": "",
+            "content": [
+                {"text": "", "formula": "...", "info": ""}
+            ]
+        },
+        {
+            "level": 4,
+            "title": "6.1 Intrinsische Halbleiter",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "6.2 Dotierte Halbleiter",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "6.3 pn-Übergang",
+            "info": "",
+            "content": []
+        },
+    ],
+
+    7: [  # Relativitätstheorie
+        {
+            "level": 3,
+            "title": "Grundlegende Gleichungen und Definitionen",
+            "info": "",
+            "content": [
+                {"text": "Einstein'sche Summenkonvention:", "formula": "...", "info": ""},
+                {"text": "Minkowski-Metrik:", "formula": "...", "info": ""},
+                {"text": "Kronecker-Delta:", "formula": "...", "info": ""},
+                {"text": "Invariantes Längenelement:", "formula": "...", "info": ""},
+                {"text": "Eigenzeit:", "formula": "...", "info": ""}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Geodätengleichung",
+            "info": "",
+            "content": [
+                {"text": "Geodätengleichung:", "formula": "...", "info": ""},
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Einstein-Gleichung",
+            "info": "",
+            "content": [
+                {"text": "Wirkung des Universums:", "formula": "...", "info": ""},
+                {"text": "Einstein-Tensor:", "formula": "...", "info": ""},
+                {"text": "Energie-Materie-Tensor:", "formula": "...", "info": ""},
+                {"text": "Einstein-Gleichung:", "formula": "...", "info": ""},
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Anwendungsbeispiele",
+            "info": "",
+            "content":[
+                {"text": "Signalaustausch:", "formula": "...", "info": ""},
+                {"text": "Schwarze Löcher:", "formula": "...", "info": ""},
+                {"text": "Kosmologie und Urknall:", "formula": "...", "info": ""}
+            ]
+        }
+    ]
+
+
+
+
+
 }
 # ===================================================================
 def init_colors():
