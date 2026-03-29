@@ -149,42 +149,68 @@ SUB_DATA = {
     2: [  # Analytische Mechanik
         {
             "level": 3,
-            "title": "Formalismen der Analytischen Mechanik",
-            "info": "Lagrange- und Hamilton-Formalismus der klassischen Mechanik.",
-            "content": [
-                {"text": "Lagrange-Gleichungen 1. Art:", "formula": "...", "info": "Lagrange-Gleichungen 1. Art"},
-                {"text": "Lagrange-Gleichung 2. Art:", "formula": "d/dt (∂L/∂q̇_k) - ∂L/∂q_k = 0", "info": "Lagrange-Gleichung zweiter Art"},
-                {"text": "Hamilton-Gleichungen:", "formula": "q̇ = ∂H/∂p, ṗ = -∂H/∂q", "info": "Kanonsche Gleichungen des Hamilton-Formalismus"}
-            ]
+            "title": "1. Formalismen der Analytischen Mechanik",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.1 Lagrange-Gleichungen 1. Art",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.2 Lagrange-Gleichungen 2. Art",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.3 Hamilton-Formalismus",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.4 Routh'sche Funktion",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.3 Hamilton-Jacobi-Theorie",
+            "info": "",
+            "content": []
         },
         {
             "level": 3,
-            "title": "Prinzip der kleinsten Wirkung",
-            "info": "Das Prinzip der kleinsten Wirkung in der analytischen Mechanik.",
+            "title": "2. Prinzip der kleinsten Wirkung",
+            "info": "",
             "content": [
                 {"text": "", "formula": "...", "info": "Prinzip der kleinsten Wirkung"}
             ]
         },
         {
             "level": 3,
-            "title": "Noether-Theorem",
-            "info": "Noether-Theorem und Symmetrien.",
+            "title": "3. Noether-Theorem",
+            "info": "",
             "content": [
                 {"text": "", "formula": "...", "info": "Noether-Theorem"}
             ]
         },
         {
             "level": 3,
-            "title": "Zweikörperproblem",
-            "info": "Das reduzierte Zweikörperproblem.",
+            "title": "4. Zweikörperproblem",
+            "info": "",
             "content": [
                 {"text": "", "formula": "...", "info": "Zweikörperproblem"}
             ]
         },
         {
             "level": 3,
-            "title": "Starre Körper",
-            "info": "Mechanik starrer Körper.",
+            "title": "5. Starre Körper",
+            "info": "",
             "content": [
                 {"text": "", "formula": "...", "info": "Starre Körper"}
             ]
@@ -204,31 +230,42 @@ SUB_DATA = {
         },
         {
             "level": 4,
-            "title": "1.1 Modellsysteme",
+            "title": "1.1 Grundlegende Gleichungen und Definitionen",
+            "info": "",
+            "content": [
+                {"text": "Coulomb-Kraft:", "formula": "...", "info": ""},
+                {"text": "Elektrisches Feld:", "formula": "...", "info": ""},
+                {"text": "Elektrisches Potential:", "formula": "...", "info": ""},
+                {"text": "Energie E-Feld:", "formula": "...", "info": ""},
+            ]
+        },
+        {
+            "level": 4,
+            "title": "1.2 Modellsysteme",
             "info": "Wichtige Modellsysteme der Elektrostatik.",
             "content": []
         },
         {
             "level": 5,
-            "title": "1.1.1 Punktladung",
+            "title": "1.2.1 Punktladung",
             "info": "",
             "content": []
         },
         {
             "level": 5,
-            "title": "1.1.2 Plattenkondensator",
+            "title": "1.2.2 Plattenkondensator",
             "info": "",
             "content": []
         },
         {
             "level": 5,
-            "title": "1.1.3 Zylinderkondensator",
+            "title": "1.2.3 Zylinderkondensator",
             "info": "",
             "content": []
         },
         {
             "level": 5,
-            "title": "1.1.4 Elektrischer Dipol",
+            "title": "1.2.4 Elektrischer Dipol",
             "info": "",
             "content": []
         },
@@ -240,37 +277,43 @@ SUB_DATA = {
         },
         {
             "level": 4,
-            "title": "2.1 Modellsysteme",
+            "title": "2.2 Grundlegende Gleichungen und Definitionen",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.2 Modellsysteme",
             "info": "Wichtige Modellsysteme der Elektrostatik.",
             "content": []
         },
         {
             "level": 5,
-            "title": "2.1.1 Stromdurchflossener Draht",
+            "title": "2.2.1 Stromdurchflossener Draht",
             "info": "",
             "content": []
         },
         {
             "level": 5,
-            "title": "2.1.2 Kreisstrom",
+            "title": "2.2.2 Kreisstrom",
             "info": "",
             "content": []
         },
         {
             "level": 5,
-            "title": "2.1.3 Zylinderspule",
+            "title": "2.2.3 Zylinderspule",
             "info": "",
             "content": []
         },
         {
             "level": 5,
-            "title": "2.1.4 Magnetischer Dipol",
+            "title": "2.2.4 Magnetischer Dipol",
             "info": "",
             "content": []
         },
         {
             "level": 5,
-            "title": "2.1.5 Helmholtz-Spule",
+            "title": "2.2.5 Helmholtz-Spule",
             "info": "",
             "content": []
         },
@@ -640,7 +683,7 @@ SUB_DATA = {
     7: [  # Relativitätstheorie
         {
             "level": 3,
-            "title": "Grundlegende Gleichungen und Definitionen",
+            "title": "1. Grundlegende Gleichungen und Definitionen",
             "info": "",
             "content": [
                 {"text": "Einstein'sche Summenkonvention:", "formula": "...", "info": ""},
@@ -652,7 +695,7 @@ SUB_DATA = {
         },
         {
             "level": 3,
-            "title": "Geodätengleichung",
+            "title": "2. Geodätengleichung",
             "info": "",
             "content": [
                 {"text": "Geodätengleichung:", "formula": "...", "info": ""},
@@ -660,7 +703,7 @@ SUB_DATA = {
         },
         {
             "level": 3,
-            "title": "Einstein-Gleichung",
+            "title": "3. Einstein-Gleichung",
             "info": "",
             "content": [
                 {"text": "Wirkung des Universums:", "formula": "...", "info": ""},
@@ -671,13 +714,27 @@ SUB_DATA = {
         },
         {
             "level": 3,
-            "title": "Anwendungsbeispiele",
+            "title": "4. Anwendungsbeispiele",
             "info": "",
-            "content":[
-                {"text": "Signalaustausch:", "formula": "...", "info": ""},
-                {"text": "Schwarze Löcher:", "formula": "...", "info": ""},
-                {"text": "Kosmologie und Urknall:", "formula": "...", "info": ""}
-            ]
+            "content":[]
+        },
+        {
+            "level": 4,
+            "title": "4.1 Signalaustausch",
+            "info": "",
+            "content":[]
+        },
+        {
+            "level": 4,
+            "title": "4.2 Schwarze Löcher",
+            "info": "",
+            "content":[]
+        },
+        {
+            "level": 4,
+            "title": "4.3 Kosmologie und Urknall",
+            "info": "",
+            "content":[]
         }
     ]
 
@@ -888,7 +945,7 @@ def show_chapter(stdscr, chapter_num, chapter_title):
                 left = cline.get("text", "")
                 right = cline.get("formula", "")
                 # 40 = width of the left column (change if you need more/less space)
-                line_text = f"{left:<30}{right}"
+                line_text = f"{left:<35}{right}"
                 if r == current:
                     stdscr.attron(curses.A_REVERSE | curses.A_BOLD)
                     stdscr.addstr(y, 1, line_text)
