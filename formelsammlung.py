@@ -36,8 +36,7 @@ SUB_DATA = {
             "content": [
                 {"text": "Gravitationskonstante:", "formula": "G = 6.67430(15)×10⁻¹¹ m³ kg⁻¹ s⁻²", "info": "Universelle Gravitationskonstante"},
                 {"text": "Erdmasse:", "formula": "M_⊕ = 5.97237(±0.00029)×10²⁴ kg", "info": "Masse der Erde"},
-                {"text": "Sonnenmasse:", "formula": "M_☉ = 1.9885(±0.0003)×10³⁰ kg", "info": "Masse der Sonne"},
-                {"text": "", "formula": "", "info": ""}
+                {"text": "Sonnenmasse:", "formula": "M_☉ = 1.9885(±0.0003)×10³⁰ kg", "info": "Masse der Sonne"}
             ]
         },
         {
@@ -49,8 +48,7 @@ SUB_DATA = {
                 {"text": "Lichtgeschwindigkeit:", "formula": "c = 299792458 m/s (exakt)", "info": "Lichtgeschwindigkeit im Vakuum"},
                 {"text": "Elektrische Feldkonstante:", "formula": "ε₀ = 8.8541878128(13)×10⁻¹² F/m", "info": "Permittivität des Vakuums"},
                 {"text": "Magnetische Feldkonstante:", "formula": "μ₀ = 1.25663706212(19)×10⁻⁶ H/m", "info": "Permeabilität des Vakuums"},
-                {"text": "Coulomb-Konstante:", "formula": "k = 8.987551789×10⁹ N·m²/C²", "info": "Coulomb-Konstante"},
-                {"text": "", "formula": "", "info": ""}
+                {"text": "Coulomb-Konstante:", "formula": "k = 8.987551789×10⁹ N·m²/C²", "info": "Coulomb-Konstante"}
             ]
         },
         {
@@ -62,8 +60,7 @@ SUB_DATA = {
                 {"text": "Reduzierte Plancksche Konst.:", "formula": "ħ = 1.054571817…×10⁻³⁴ J·s", "info": "Reduziertes Plancksches Wirkungsquantum"},
                 {"text": "Feinstrukturkonstante:", "formula": "α ≈ 7.2973525693(11)×10⁻³", "info": "Feinstrukturkonstante"},
                 {"text": "Rydberg-Konstante:", "formula": "R_∞ = 1.0973731568160(21)×10⁷ m⁻¹", "info": "Rydberg-Konstante"},
-                {"text": "Bohr-Radius:", "formula": "a₀ = 5.29177210903(80)×10⁻¹¹ m", "info": "Bohr-Radius"},
-                {"text": "", "formula": "", "info": ""}
+                {"text": "Bohr-Radius:", "formula": "a₀ = 5.29177210903(80)×10⁻¹¹ m", "info": "Bohr-Radius"}
             ]
         },
         {
@@ -73,8 +70,7 @@ SUB_DATA = {
             "content": [
                 {"text": "Avogadro-Konstante:", "formula": "N_A = 6.02214076×10²³ mol⁻¹ (exakt)", "info": "Avogadro-Konstante"},
                 {"text": "Boltzmann-Konstante:", "formula": "k_B = 1.380649×10⁻²³ J/K (exakt)", "info": "Boltzmann-Konstante"},
-                {"text": "Gaskonstante:", "formula": "R = 8.314462618 J mol⁻¹ K⁻¹", "info": "Universelle Gaskonstante"},
-                {"text": "", "formula": "", "info": ""}
+                {"text": "Gaskonstante:", "formula": "R = 8.314462618 J mol⁻¹ K⁻¹", "info": "Universelle Gaskonstante"}
             ]
         }
     ],
@@ -177,7 +173,7 @@ def print_help_main(stdscr, height):
     stdscr.attron(curses.color_pair(5))
     stdscr.addstr(height - 1, 8, "[q]")
     stdscr.attroff(curses.color_pair(5))
-    stdscr.addstr(height - 1, 1, "zum Zurückgehen/Beenden")
+    stdscr.addstr(height - 1, 12, "zum Zurückgehen/Beenden")
 
 def print_help_chapter(stdscr, height):
     stdscr.addstr(height - 5, 0, "Eingabe ")
@@ -354,6 +350,10 @@ def show_chapter(stdscr, chapter_num, chapter_title):
                 else:
                     stdscr.addstr(y, 1, line_text)
                 y += 1 
+
+        # === NEU: Eine Leerzeile nach jedem Formel-Block (wird vom Cursor übersprungen) ===
+            if row["type"] == "content" and r + 1 < len(rows) and rows[r+1]["type"] == "title":
+                y += 1   # leere Zeile nach dem letzten Formel-Eintrag eines Blocks
 
         print_help_chapter(stdscr, height)
         stdscr.refresh()
