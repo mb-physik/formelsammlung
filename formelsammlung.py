@@ -28,6 +28,61 @@ MAIN_DATA = [
 ]
 # ====================== DETAIL-INHALT (Newton'sche Mechanik) ======================
 SUB_DATA = {
+        0: [  # Naturkonstanten
+        {
+            "level": 3,
+            "title": "Mechanik",
+            "info": "Mechanische und gravitative Konstanten",
+            "content": [
+                {"text": "Gravitationskonstante:", "formula": "G = 6.67430(15)×10⁻¹¹ m³ kg⁻¹ s⁻²", "info": "Universelle Gravitationskonstante"},
+                {"text": "Erdmasse:", "formula": "M_⊕ = 5.97237(±0.00029)×10²⁴ kg", "info": "Masse der Erde"},
+                {"text": "Sonnenmasse:", "formula": "M_☉ = 1.9885(±0.0003)×10³⁰ kg", "info": "Masse der Sonne"},
+                {"text": "", "formula": "", "info": ""}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Elektromagnetismus",
+            "info": "Elektromagnetische Konstanten",
+            "content": [
+                {"text": "Elementarladung:", "formula": "e = 1.602176634×10⁻¹⁹ C (exakt)", "info": "Elementarladung des Elektrons"},
+                {"text": "Lichtgeschwindigkeit:", "formula": "c = 299792458 m/s (exakt)", "info": "Lichtgeschwindigkeit im Vakuum"},
+                {"text": "Elektrische Feldkonstante:", "formula": "ε₀ = 8.8541878128(13)×10⁻¹² F/m", "info": "Permittivität des Vakuums"},
+                {"text": "Magnetische Feldkonstante:", "formula": "μ₀ = 1.25663706212(19)×10⁻⁶ H/m", "info": "Permeabilität des Vakuums"},
+                {"text": "Coulomb-Konstante:", "formula": "k = 8.987551789×10⁹ N·m²/C²", "info": "Coulomb-Konstante"},
+                {"text": "", "formula": "", "info": ""}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Quantenmechanik",
+            "info": "Quantenmechanische Konstanten",
+            "content": [
+                {"text": "Plancksche Konstante:", "formula": "h = 6.62607015×10⁻³⁴ J·s (exakt)", "info": "Plancksches Wirkungsquantum"},
+                {"text": "Reduzierte Plancksche Konst.:", "formula": "ħ = 1.054571817…×10⁻³⁴ J·s", "info": "Reduziertes Plancksches Wirkungsquantum"},
+                {"text": "Feinstrukturkonstante:", "formula": "α ≈ 7.2973525693(11)×10⁻³", "info": "Feinstrukturkonstante"},
+                {"text": "Rydberg-Konstante:", "formula": "R_∞ = 1.0973731568160(21)×10⁷ m⁻¹", "info": "Rydberg-Konstante"},
+                {"text": "Bohr-Radius:", "formula": "a₀ = 5.29177210903(80)×10⁻¹¹ m", "info": "Bohr-Radius"},
+                {"text": "", "formula": "", "info": ""}
+            ]
+        },
+        {
+            "level": 3,
+            "title": "Thermodynamik",
+            "info": "Thermodynamische Konstanten",
+            "content": [
+                {"text": "Avogadro-Konstante:", "formula": "N_A = 6.02214076×10²³ mol⁻¹ (exakt)", "info": "Avogadro-Konstante"},
+                {"text": "Boltzmann-Konstante:", "formula": "k_B = 1.380649×10⁻²³ J/K (exakt)", "info": "Boltzmann-Konstante"},
+                {"text": "Gaskonstante:", "formula": "R = 8.314462618 J mol⁻¹ K⁻¹", "info": "Universelle Gaskonstante"},
+                {"text": "", "formula": "", "info": ""}
+            ]
+        }
+    ],
+    
+    
+    
+    
+    
     1: [ # Newton'sche Mechanik
         {"level": 3, "title": "1. Axiome und grundlegende Definitionen",
          "info": "Dieser Abschnitt erklärt die drei Newton'schen Axiome und die grundlegenden kinematischen Größen.",
@@ -60,7 +115,7 @@ SUB_DATA = {
         {"level": 4, "title": "3.2 Harmonischer Oszillator mit Stokes-Reibung",
          "info": "Gedämpfter Oszillator.",
          "content": [{"text": "...", "formula": "", "info": ""}]},
-        {"level": 4, "title": "Getriebener harmonischer Oszillator",
+        {"level": 4, "title": "3.3 Getriebener harmonischer Oszillator",
          "info": "Oszillator mit äußerer Anregung.",
          "content": [{"text": "...", "formula": "", "info": ""}]},
         {"level": 4, "title": "3.4 Schiefer Wurf",
@@ -100,29 +155,29 @@ def init_colors():
 def print_help_main(stdscr, height):
     stdscr.addstr(height - 5, 0, "Eingabe ")
     stdscr.attron(curses.color_pair(5))
-    stdscr.addstr(height - 5, 8, "[0]-[7]")
+    stdscr.addstr(height - 5, 8, "[↑],[↓]")
     stdscr.attroff(curses.color_pair(5))
-    stdscr.addstr(height - 5, 16, "zum Öffnen des jeweiligen Kapitels")
+    stdscr.addstr(height - 5, 16, "zum Navigieren des Cursors")
     stdscr.addstr(height - 4, 0, "Eingabe ")
     stdscr.attron(curses.color_pair(5))
-    stdscr.addstr(height - 4, 8, "[↑],[↓]")
+    stdscr.addstr(height - 4, 8, "[ENTER]")
     stdscr.attroff(curses.color_pair(5))
-    stdscr.addstr(height - 4, 16, "zum Navigieren des Cursors")
+    stdscr.addstr(height - 4, 16, "zum Auswählen des markierten Kapitels")
     stdscr.addstr(height - 3, 0, "Eingabe ")
     stdscr.attron(curses.color_pair(5))
-    stdscr.addstr(height - 3, 8, "[ENTER]")
+    stdscr.addstr(height - 3, 8, "[i]")
     stdscr.attroff(curses.color_pair(5))
-    stdscr.addstr(height - 3, 16, "zum Auswählen des markierten Kapitels")
+    stdscr.addstr(height - 3, 12, "für mehr Informationen zum markierten Thema")
     stdscr.addstr(height - 2, 0, "Eingabe ")
     stdscr.attron(curses.color_pair(5))
-    stdscr.addstr(height - 2, 8, "[i]")
+    stdscr.addstr(height - 2, 8, "[0]-[7]")
     stdscr.attroff(curses.color_pair(5))
-    stdscr.addstr(height - 2, 12, "für mehr Informationen zum markierten Thema")
+    stdscr.addstr(height - 2, 16, "zum schnelleren Öffnen des jeweiligen Kapitels")
     stdscr.addstr(height - 1, 0, "Eingabe ")
     stdscr.attron(curses.color_pair(5))
     stdscr.addstr(height - 1, 8, "[q]")
     stdscr.attroff(curses.color_pair(5))
-    stdscr.addstr(height - 1, 12, "zum Zurückgehen/Beenden")
+    stdscr.addstr(height - 1, 1, "zum Zurückgehen/Beenden")
 
 def print_help_chapter(stdscr, height):
     stdscr.addstr(height - 5, 0, "Eingabe ")
@@ -157,7 +212,12 @@ def print_help_info(stdscr, height):
     stdscr.attron(curses.color_pair(5))
     stdscr.addstr(height - 2, 8, "[i]")
     stdscr.attroff(curses.color_pair(5))
-    stdscr.addstr(height - 2, 12, "zum Schließen")
+    stdscr.addstr(height - 2, 12, "zum Schließen der Information")
+    stdscr.addstr(height - 1, 0, "Eingabe ")
+    stdscr.attron(curses.color_pair(5))
+    stdscr.addstr(height - 1, 8, "[q]")
+    stdscr.attroff(curses.color_pair(5))
+    stdscr.addstr(height - 1, 12, "zum Zurückgehen/Beenden")
 
 def show_info(stdscr, title, info_text):
     while True:
@@ -176,7 +236,7 @@ def show_info(stdscr, title, info_text):
         print_help_info(stdscr, height)
         stdscr.refresh()
         key = stdscr.getch()
-        if key in (ord('c'), ord('C'), ord('q'), ord('Q'), ord('i'), ord('I')):
+        if key in (ord('q'), ord('Q'), ord('i'), ord('I')):
             return
 
 def show_main_menu(stdscr):
@@ -228,7 +288,7 @@ def show_main_menu(stdscr):
         elif key in (ord('i'), ord('I')):
             item = MAIN_DATA[current]
             show_info(stdscr, item["title"], item["info"])
-        elif key in (ord('c'), ord('C'), ord('q'), ord('Q')):
+        elif key in (ord('q'), ord('Q')):
             break
 
 def show_chapter(stdscr, chapter_num, chapter_title):
@@ -281,16 +341,19 @@ def show_chapter(stdscr, chapter_num, chapter_title):
                     stdscr.attroff(title_color)
                 y += 1
             else:
-                # Formula line
+                # Formula line - aligned two-column layout
                 cline = row["line"]
-                line_text = f"{cline['text']} {cline.get('formula', '')}".strip()
+                left = cline.get("text", "")
+                right = cline.get("formula", "")
+                # 40 = width of the left column (change if you need more/less space)
+                line_text = f"{left:<30}{right}"
                 if r == current:
                     stdscr.attron(curses.A_REVERSE | curses.A_BOLD)
                     stdscr.addstr(y, 1, line_text)
                     stdscr.attroff(curses.A_REVERSE | curses.A_BOLD)
                 else:
                     stdscr.addstr(y, 1, line_text)
-                y += 1
+                y += 1 
 
         print_help_chapter(stdscr, height)
         stdscr.refresh()
@@ -318,7 +381,7 @@ def show_chapter(stdscr, chapter_num, chapter_title):
                 header = cline["text"]
                 info_text = cline.get("info", "Keine weiteren Informationen.")
             show_info(stdscr, header, info_text)
-        elif key in (ord('c'), ord('C'), ord('q'), ord('Q')):
+        elif key in (ord('q'), ord('Q')):
             return
 
 def main(stdscr):
