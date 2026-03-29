@@ -198,57 +198,112 @@ SUB_DATA = {
     3: [  # Elektromagnetismus
         {
             "level": 3,
-            "title": "Elektrostatik",
-            "info": "Elektrostatische Felder und Grenzbedingungen.",
-            "content": [
-                {"text": "Grenzflächenbedingung Normalkomponente E-Feld:", "formula": "E_perp,A - E_perp,B = sigma/epsilon0", "info": "Normalkomponente des E-Feldes an Grenzflächen"},
-                {"text": "Grenzflächenbedingung Tangentialkomponente E-Feld:", "formula": "E_||,A = E_||,B", "info": "Tangentialkomponente des E-Feldes ist stetig"}
-            ]
+            "title": "1. Elektrostatik",
+            "info": "",
+            "content": []
         },
         {
-            "level": 3,
-            "title": "Modellsysteme",
+            "level": 4,
+            "title": "1.1 Modellsysteme",
             "info": "Wichtige Modellsysteme der Elektrostatik.",
-            "content": [
-                {"text": "Punktladung", "formula": "...", "info": "Punktladung"},
-                {"text": "Plattenkondensator", "formula": "...", "info": "Plattenkondensator"},
-                {"text": "Zylinderkondensator", "formula": "...", "info": "Zylinderkondensator"},
-                {"text": "Elektrischer Dipol", "formula": "...", "info": "Elektrischer Dipol"}
-            ]
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "1.1.1 Punktladung",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "1.1.2 Plattenkondensator",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "1.1.3 Zylinderkondensator",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "1.1.4 Elektrischer Dipol",
+            "info": "",
+            "content": []
         },
         {
             "level": 3,
-            "title": "Magnetostatik",
-            "info": "Magnetostatische Felder und Modellsysteme.",
-            "content": [
-                {"text": "Stromdurchflossener Draht", "formula": "...", "info": "Stromdurchflossener Draht"},
-                {"text": "Kreisstrom", "formula": "...", "info": "Kreisstrom"},
-                {"text": "Zylinderspule", "formula": "...", "info": "Zylinderspule"},
-                {"text": "Magnetischer Dipol", "formula": "...", "info": "Magnetischer Dipol"},
-                {"text": "Helmholtz-Spule", "formula": "...", "info": "Helmholtz-Spule"}
-            ]
+            "title": "2. Magnetostatik",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "2.1 Modellsysteme",
+            "info": "Wichtige Modellsysteme der Elektrostatik.",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "2.1.1 Stromdurchflossener Draht",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "2.1.2 Kreisstrom",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "2.1.3 Zylinderspule",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "2.1.4 Magnetischer Dipol",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 5,
+            "title": "2.1.5 Helmholtz-Spule",
+            "info": "",
+            "content": []
         },
         {
             "level": 3,
-            "title": "Elektro- und Magnetostatik in Materie",
-            "info": "Verhalten in Dielektrika und Magnetika.",
-            "content": [
-                {"text": "Dielektrika", "formula": "...", "info": "Dielektrika"},
-                {"text": "Magnetika", "formula": "...", "info": "Magnetika"}
-            ]
+            "title": "3. Elektro- und Magnetostatik in Materie",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "3.1 Dielektrika",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "3.2 Magnetika",
+            "info": "",
+            "content": []
         },
         {
             "level": 3,
-            "title": "Elektrodynamik",
-            "info": "Elektromagnetische Wellen und Dynamik.",
+            "title": "4. Elektrodynamik",
+            "info": "",
             "content": [
                 {"text": "Elektromagnetische Welle", "formula": "...", "info": "Elektromagnetische Welle"}
             ]
         },
         {
             "level": 3,
-            "title": "Elektronik",
-            "info": "Grundlagen der Elektronik.",
+            "title": "5. Elektronik",
+            "info": "",
             "content": [
                 {"text": "", "formula": "...", "info": ""}
             ]
@@ -263,24 +318,43 @@ SUB_DATA = {
     4: [  # Optik
         {
             "level": 3,
-            "title": "Elektromagnetische Welle",
-            "info": "Wellenoptik und Ausbreitung.",
+            "title": "1. Elektromagnetische Welle",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.1 Elektromagnetische Welle",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.2 Wellenpaket",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 4,
+            "title": "1.3 Reflexion und Transmission",
+            "info": "",
+            "content": []
+        },
+        {
+            "level": 3,
+            "title": "2. Geometrische Optik",
+            "info": "",
             "content": [
-                {"text": "Ebene Welle", "formula": "...", "info": "Ebene Welle"},
-                {"text": "Wellenpaket", "formula": "...", "info": "Wellenpaket"},
-                {"text": "Reflexion und Transmission", "formula": "Snelliusches Brechungsgesetz: n₁ sinθ₁ = n₂ sinθ₂", "info": "Reflexion und Transmission"}
+                {"text": "Snelliusches Brechungsgesetz:", "formula": "n₁ sin θ₁ = n₂ sin θ₂", "info": "Snelliusches Brechungsgesetz"},
+                {"text": "Reflexionsgesetz:", "formula": "θ_i = θ_r", "info": "Reflexionsgesetz"}
             ]
         },
         {
             "level": 3,
-            "title": "Geometrische Optik",
-            "info": "Geometrische Optik und Linsen.",
-            "content": [
-                {"text": "Snelliusches Brechungsgesetz:", "formula": "n₁ sin θ₁ = n₂ sin θ₂", "info": "Snelliusches Brechungsgesetz"},
-                {"text": "Reflexionsgesetz:", "formula": "θ_i = θ_r", "info": "Reflexionsgesetz"},
-                {"text": "Modellsysteme", "formula": "...", "info": "Modellsysteme der geometrischen Optik"}
-            ]
-        }
+            "title": "2.1 Modellsysteme",
+            "info": "",
+            "content": []
+        },
     ],
 
 
